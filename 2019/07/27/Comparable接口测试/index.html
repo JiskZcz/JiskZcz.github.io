@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="日历表  利用日期类写了一个日历表.">
-<meta name="keywords" content="日历表">
+  <meta name="description" content="Comparable接口测试在写某些程序的时候我们往往需要排序，特别是是对容器进行排序的时候，往往是很麻烦的，这时候我们就可以继承Comparable接口中的compareTo方法来进行排序。">
+<meta name="keywords" content="Comparable接口测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日历表">
-<meta property="og:url" content="http://yoursite.com/2019/07/22/日历表/index.html">
+<meta property="og:title" content="Comparable接口测试">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/Comparable接口测试/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="日历表  利用日期类写了一个日历表.">
+<meta property="og:description" content="Comparable接口测试在写某些程序的时候我们往往需要排序，特别是是对容器进行排序的时候，往往是很麻烦的，这时候我们就可以继承Comparable接口中的compareTo方法来进行排序。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-22T09:21:15.528Z">
+<meta property="og:updated_time" content="2019-07-27T09:45:31.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日历表">
-<meta name="twitter:description" content="日历表  利用日期类写了一个日历表.">
+<meta name="twitter:title" content="Comparable接口测试">
+<meta name="twitter:description" content="Comparable接口测试在写某些程序的时候我们往往需要排序，特别是是对容器进行排序的时候，往往是很麻烦的，这时候我们就可以继承Comparable接口中的compareTo方法来进行排序。">
 
 
 
@@ -121,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/22/日历表/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/Comparable接口测试/">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>日历表 | Hello</title>
+  <title>Comparable接口测试 | Hello</title>
   
 
 
@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/日历表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/Comparable接口测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiskZcz">
@@ -366,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">日历表
+          <h1 class="post-title" itemprop="name headline">Comparable接口测试
 
               
             
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="创建时间：2019-07-22 17:15:00 / 修改时间：17:21:15" itemprop="dateCreated datePublished" datetime="2019-07-22T17:15:00+08:00">2019-07-22</time>
+              <time title="创建时间：2019-07-27 17:26:45 / 修改时间：17:45:31" itemprop="dateCreated datePublished" datetime="2019-07-27T17:26:45+08:00">2019-07-27</time>
             </span>
           
 
@@ -459,10 +459,13 @@
       
 
       
-        <h1 id="日历表"><a href="#日历表" class="headerlink" title="日历表"></a>日历表</h1><p>  利用日期类写了一个日历表.<a id="more"></a></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.ParseException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.GregorianCalendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarWatch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ParseException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner sc=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入日期（格式为：2000-1-1）："</span>);</span><br><span class="line">		String s=sc.nextLine();</span><br><span class="line">		<span class="comment">//日期类的使用</span></span><br><span class="line">		Date d=<span class="keyword">new</span> Date();</span><br><span class="line">		SimpleDateFormat sd=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">		Calendar c=<span class="keyword">new</span> GregorianCalendar();</span><br><span class="line">		d=sd.parse(s);</span><br><span class="line">		System.out.println(d);</span><br><span class="line">		c.setTime(d);</span><br><span class="line">		System.out.println(<span class="string">"你输入了："</span>+s);</span><br><span class="line">		System.out.print(<span class="string">"日\t一\t二\t三\t四\t五\t六\t"</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">		<span class="keyword">int</span> Day=c.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">		c.set(Calendar.DAY_OF_MONTH,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> MaxDay=c.getActualMaximum(Calendar.DATE);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;c.get(Calendar.DAY_OF_WEEK);i++) &#123;</span><br><span class="line">			System.out.print(<span class="string">"\t"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">1</span>;b&lt;=MaxDay;b++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(c.get(Calendar.DAY_OF_MONTH)==Day) &#123;</span><br><span class="line">				System.out.print(c.get(Calendar.DAY_OF_MONTH)+<span class="string">"*"</span>+<span class="string">"\t"</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			<span class="keyword">else</span>			</span><br><span class="line">			System.out.print(c.get(Calendar.DAY_OF_MONTH)+<span class="string">"\t"</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(c.get(Calendar.DAY_OF_WEEK)==<span class="number">7</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">			c.add(Calendar.DAY_OF_MONTH, <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Comparable接口测试"><a href="#Comparable接口测试" class="headerlink" title="Comparable接口测试"></a>Comparable接口测试</h1><p>在写某些程序的时候我们往往需要排序，特别是是对容器进行排序的时候，往往是很麻烦的，这时候我们就可以继承Comparable接口中的compareTo方法来进行排序。<a id="more"></a></p>
+<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  <span class="class"><span class="keyword">class</span> <span class="title">ComparableTest</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">ComparableTest</span>&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ComparableTest</span><span class="params">(<span class="keyword">int</span> id, String name, <span class="keyword">int</span> age, String sex)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">this</span>.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Map&lt;ComparableTest,String&gt; map=<span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">		map.put(<span class="keyword">new</span> ComparableTest(<span class="number">35</span>,<span class="string">"张三"</span>,<span class="number">25</span>,<span class="string">"男"</span>),<span class="string">"123"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> ComparableTest(<span class="number">25</span>,<span class="string">"李四"</span>,<span class="number">20</span>,<span class="string">"男"</span>),<span class="string">"456"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> ComparableTest(<span class="number">12</span>,<span class="string">"王小花"</span>,<span class="number">18</span>,<span class="string">"女"</span>),<span class="string">"678"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> ComparableTest(<span class="number">12</span>,<span class="string">"李小四"</span>,<span class="number">14</span>,<span class="string">"男"</span>),<span class="string">"910"</span>);</span><br><span class="line">	<span class="keyword">for</span>(ComparableTest key:map.keySet()) &#123;</span><br><span class="line">		System.out.println(key+<span class="string">"---"</span>+map.get(key));</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">"id:"</span>+id+<span class="string">",name:"</span>+name+<span class="string">",age:"</span>+age+<span class="string">",sex:"</span>+sex;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(ComparableTest o)</span> </span>&#123;  <span class="comment">//负数：小于，0：等于，正数：大于</span></span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.id&gt;o.id)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.id&lt;o.id)</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.age&gt;o.age)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.age&lt;o.age)</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>  月份的表示，一月是0，二月是1，以此类推，12月是11。 因为大多数人习惯于使用单词而不是使用数字来表示月份，这样程序也许更易读，父类Calendar使用常量来表示月份：JANUARY、FEBRUARY等等。</p>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><blockquote><p>id:12,name:李小四,age:14,sex:男—910<br>id:12,name:王小花,age:18,sex:女—678<br>id:25,name:李四,age:20,sex:男—456<br>id:35,name:张三,age:25,sex:男—123</p>
+</blockquote>
+
+
 
       
     </div>
@@ -526,7 +529,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/日历表/" rel="tag"># 日历表</a>
+            <a href="/tags/Comparable接口测试/" rel="tag"># Comparable接口测试</a>
           
         </div>
       
@@ -539,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/20/包装类的缓存问题/" rel="next" title="包装类的缓存问题">
-                <i class="fa fa-chevron-left"></i> 包装类的缓存问题
+              <a href="/2019/07/22/日历表/" rel="next" title="日历表">
+                <i class="fa fa-chevron-left"></i> 日历表
               </a>
             
           </div>
@@ -548,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/27/Comparable接口测试/" rel="prev" title="Comparable接口测试">
-                Comparable接口测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -738,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#日历表"><span class="nav-number">1.</span> <span class="nav-text">日历表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Comparable接口测试"><span class="nav-number">1.</span> <span class="nav-text">Comparable接口测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现代码"><span class="nav-number">2.</span> <span class="nav-text">实现代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">2.1.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
             
 
           </div>
