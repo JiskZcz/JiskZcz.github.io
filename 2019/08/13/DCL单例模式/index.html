@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="基本概念 多线程是Java语言的重要特性，大量应用于网络编程、服务器端程序的开发，最常见的UI界面底层原理、操作系统底层原理都大量使用了多线程。我们可以流畅的点击软件或者游戏中的各种按钮，其实，底层就是多线程的应用。UI界面的主线程绘制界面，如果有一个耗时的操作发生则启动新的线程，完全不影响主线程的工作。当这个线程工作完毕后，再更新到主界面上。我们可以上百人、上千人、上万人同时访问某个网站，其实，">
-<meta name="keywords" content="多线程">
+  <meta name="description" content="DCL单例模式单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。">
+<meta name="keywords" content="单例模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程实现">
-<meta property="og:url" content="http://yoursite.com/2019/08/04/线程实现/index.html">
+<meta property="og:title" content="DCL单例模式">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/DCL单例模式/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="基本概念 多线程是Java语言的重要特性，大量应用于网络编程、服务器端程序的开发，最常见的UI界面底层原理、操作系统底层原理都大量使用了多线程。我们可以流畅的点击软件或者游戏中的各种按钮，其实，底层就是多线程的应用。UI界面的主线程绘制界面，如果有一个耗时的操作发生则启动新的线程，完全不影响主线程的工作。当这个线程工作完毕后，再更新到主界面上。我们可以上百人、上千人、上万人同时访问某个网站，其实，">
+<meta property="og:description" content="DCL单例模式单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-04T01:46:00.547Z">
+<meta property="og:updated_time" content="2019-08-13T06:19:55.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程实现">
-<meta name="twitter:description" content="基本概念 多线程是Java语言的重要特性，大量应用于网络编程、服务器端程序的开发，最常见的UI界面底层原理、操作系统底层原理都大量使用了多线程。我们可以流畅的点击软件或者游戏中的各种按钮，其实，底层就是多线程的应用。UI界面的主线程绘制界面，如果有一个耗时的操作发生则启动新的线程，完全不影响主线程的工作。当这个线程工作完毕后，再更新到主界面上。我们可以上百人、上千人、上万人同时访问某个网站，其实，">
+<meta name="twitter:title" content="DCL单例模式">
+<meta name="twitter:description" content="DCL单例模式单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/04/线程实现/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/13/DCL单例模式/">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>多线程实现 | Hello</title>
+  <title>DCL单例模式 | Hello</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/线程实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/DCL单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiskZcz">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多线程实现
+          <h1 class="post-title" itemprop="name headline">DCL单例模式
 
               
             
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-08-04 09:33:59 / 修改时间：09:46:00" itemprop="dateCreated datePublished" datetime="2019-08-04T09:33:59+08:00">2019-08-04</time>
+              <time title="创建时间：2019-08-13 14:11:24 / 修改时间：14:19:55" itemprop="dateCreated datePublished" datetime="2019-08-13T14:11:24+08:00">2019-08-13</time>
             </span>
           
 
@@ -461,13 +461,9 @@
       
 
       
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p> 多线程是Java语言的重要特性，大量应用于网络编程、服务器端程序的开发，最常见的UI界面底层原理、操作系统底层原理都大量使用了多线程。我们可以流畅的点击软件或者游戏中的各种按钮，其实，底层就是多线程的应用。UI界面的主线程绘制界面，如果有一个耗时的操作发生则启动新的线程，完全不影响主线程的工作。当这个线程工作完毕后，再更新到主界面上。我们可以上百人、上千人、上万人同时访问某个网站，其实，也是基于网站服务器的多线程原理。如果没有多线程，服务器处理速度会极大降低。<a id="more"></a></p>
-<h1 id="通过继承Thread类实现多线程"><a href="#通过继承Thread类实现多线程" class="headerlink" title="通过继承Thread类实现多线程"></a>通过继承Thread类实现多线程</h1><p> 继承Thread类实现多线程的步骤：<br>      1. 在Java中负责实现线程功能的类是java.lang.Thread 类。<br>      2. 可以通过创建 Thread的实例来创建新的线程。<br>      3. 每个线程都是通过某个特定的Thread对象所对应的方法run( )来完成其操作的，方法run( )称为线程体。<br>      4. 通过调用Thread类的start()方法来启动一个线程。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Study_01</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">		System.out.println(<span class="string">"Sleep"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">			System.out.println(<span class="string">"Study"</span>);</span><br><span class="line">		Study_01 st=<span class="keyword">new</span> Study_01();</span><br><span class="line">		st.start();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="DCL单例模式"><a href="#DCL单例模式" class="headerlink" title="DCL单例模式"></a>DCL单例模式</h1><p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。<a id="more"></a></p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * DCL单例模式：多线程环境下只存在一个对象。</span></span><br><span class="line"><span class="comment"> * 1.私有构造体：外部无法new对象</span></span><br><span class="line"><span class="comment"> * 2.私有静态属性：存储对象地址</span></span><br><span class="line"><span class="comment"> * 3.公共的静态方法：获取属性</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton_pattern</span> </span>&#123;</span><br><span class="line">	<span class="comment">//2.私有静态属性：存储对象地址</span></span><br><span class="line">	<span class="comment">//没有volatile其他线程可能访问没有初始化的对象</span></span><br><span class="line">	<span class="keyword">private</span>  <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton_pattern Sp;</span><br><span class="line">	<span class="comment">//1.私有构造体：外部无法new对象</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton_pattern</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//3.公共的静态方法：获取属性</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton_pattern <span class="title">getSp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//double checking</span></span><br><span class="line">		<span class="keyword">if</span>(Sp==<span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">synchronized</span>(Singleton_pattern.class) &#123;</span><br><span class="line">		<span class="keyword">if</span>(Sp==<span class="keyword">null</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			Sp=<span class="keyword">new</span> Singleton_pattern();</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> Sp; <span class="comment">//不加volatile可能造成指令重排</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Thread t=<span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">			System.out.println(Singleton_pattern.getSp());</span><br><span class="line">		&#125;) ;</span><br><span class="line">		t.start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="缺点：Java不可以多继承。"><a href="#缺点：Java不可以多继承。" class="headerlink" title="缺点：Java不可以多继承。"></a>缺点：Java不可以多继承。</h3><h1 id="通过Runnable接口实现多线程"><a href="#通过Runnable接口实现多线程" class="headerlink" title="通过Runnable接口实现多线程"></a>通过Runnable接口实现多线程</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Study_02</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Study_02 st= <span class="keyword">new</span> Study_02();</span><br><span class="line">		Thread th=<span class="keyword">new</span> Thread(st);</span><br><span class="line">		th.start();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">			System.out.println(<span class="string">"eat"</span>);</span><br><span class="line">		<span class="comment">//new Thread(new Study_02()).start(); 只使用一次线程</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">			System.out.println(<span class="string">"Study"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>  推荐使用Runnable接口，即在实现Runnable接口的同时还可以继承某个类。所以实现Runnable接口的方式要通用一些。</p>
 
       
     </div>
@@ -531,7 +527,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+            <a href="/tags/单例模式/" rel="tag"># 单例模式</a>
           
         </div>
       
@@ -544,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/27/Comparable接口测试/" rel="next" title="Comparable接口测试">
-                <i class="fa fa-chevron-left"></i> Comparable接口测试
+              <a href="/2019/08/10/生产者消费者模式（二）/" rel="next" title="生产者/消费者模式（二）">
+                <i class="fa fa-chevron-left"></i> 生产者/消费者模式（二）
               </a>
             
           </div>
@@ -553,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/05/线程状态/" rel="prev" title="线程状态">
-                线程状态 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -760,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过继承Thread类实现多线程"><span class="nav-number">2.</span> <span class="nav-text">通过继承Thread类实现多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点：Java不可以多继承。"><span class="nav-number">2.1.1.</span> <span class="nav-text">缺点：Java不可以多继承。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Runnable接口实现多线程"><span class="nav-number">3.</span> <span class="nav-text">通过Runnable接口实现多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DCL单例模式"><span class="nav-number">1.</span> <span class="nav-text">DCL单例模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">2.</span> <span class="nav-text">代码：</span></a></li></ol></div>
             
 
           </div>
