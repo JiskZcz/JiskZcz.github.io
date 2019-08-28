@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="GOF设计模式之建造者模式建造者模式">
+  <meta name="description" content="GOF设计模式之建造者模式(Builder)建造者模式">
 <meta name="keywords" content="GOF设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GOF23设计模式（四）">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/GOF23设计模式（四）/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="GOF设计模式之建造者模式建造者模式">
+<meta property="og:description" content="GOF设计模式之建造者模式(Builder)建造者模式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T07:57:46.654Z">
+<meta property="og:updated_time" content="2019-08-28T12:45:45.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GOF23设计模式（四）">
-<meta name="twitter:description" content="GOF设计模式之建造者模式建造者模式">
+<meta name="twitter:description" content="GOF设计模式之建造者模式(Builder)建造者模式">
 
 
 
@@ -394,13 +394,23 @@
                 
               
 
-              <time title="创建时间：2019-08-26 15:35:43 / 修改时间：15:57:46" itemprop="dateCreated datePublished" datetime="2019-08-26T15:35:43+08:00">2019-08-26</time>
+              <time title="创建时间：2019-08-26 15:35:43" itemprop="dateCreated datePublished" datetime="2019-08-26T15:35:43+08:00">2019-08-26</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-28 20:45:45" itemprop="dateModified" datetime="2019-08-28T20:45:45+08:00">2019-08-28</time>
+              </span>
             
           
 
@@ -461,7 +471,7 @@
       
 
       
-        <h1 id="GOF设计模式之建造者模式"><a href="#GOF设计模式之建造者模式" class="headerlink" title="GOF设计模式之建造者模式"></a>GOF设计模式之建造者模式</h1><p>建造者模式<a id="more"></a></p>
+        <h1 id="GOF设计模式之建造者模式-Builder"><a href="#GOF设计模式之建造者模式-Builder" class="headerlink" title="GOF设计模式之建造者模式(Builder)"></a>GOF设计模式之建造者模式(Builder)</h1><p>建造者模式<a id="more"></a></p>
 <h1 id="接口方法"><a href="#接口方法" class="headerlink" title="接口方法"></a>接口方法</h1><h2 id="飞船接口"><a href="#飞船接口" class="headerlink" title="飞船接口"></a>飞船接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AirShipBuilder</span> </span>&#123;</span><br><span class="line">	<span class="function">Engine <span class="title">engineBuilder</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">OrbitalModule <span class="title">orbitaModuleBuilder</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">EscapeTower <span class="title">escapeTowerBuilder</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="管理（建造）"><a href="#管理（建造）" class="headerlink" title="管理（建造）"></a>管理（建造）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Director</span> </span>&#123;</span><br><span class="line">	<span class="function">AirShip <span class="title">creatAirShip</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -634,7 +644,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -773,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GOF设计模式之建造者模式"><span class="nav-number">1.</span> <span class="nav-text">GOF设计模式之建造者模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口方法"><span class="nav-number">2.</span> <span class="nav-text">接口方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#飞船接口"><span class="nav-number">2.1.</span> <span class="nav-text">飞船接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理（建造）"><span class="nav-number">2.2.</span> <span class="nav-text">管理（建造）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承飞船接口"><span class="nav-number">3.1.</span> <span class="nav-text">继承飞船接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承建造接口"><span class="nav-number">3.2.</span> <span class="nav-text">继承建造接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#飞船类与相关组件"><span class="nav-number">4.</span> <span class="nav-text">飞船类与相关组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">5.1.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GOF设计模式之建造者模式-Builder"><span class="nav-number">1.</span> <span class="nav-text">GOF设计模式之建造者模式(Builder)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口方法"><span class="nav-number">2.</span> <span class="nav-text">接口方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#飞船接口"><span class="nav-number">2.1.</span> <span class="nav-text">飞船接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理（建造）"><span class="nav-number">2.2.</span> <span class="nav-text">管理（建造）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承飞船接口"><span class="nav-number">3.1.</span> <span class="nav-text">继承飞船接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承建造接口"><span class="nav-number">3.2.</span> <span class="nav-text">继承建造接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#飞船类与相关组件"><span class="nav-number">4.</span> <span class="nav-text">飞船类与相关组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">5.1.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
             
 
           </div>
