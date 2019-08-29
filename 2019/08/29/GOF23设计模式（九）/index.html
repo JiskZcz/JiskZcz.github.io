@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="GOF设计模式之享元模式(FlyWeight)— 享元模式以共享的方式高效地支持大量细粒度对象的重用。— 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
+  <meta name="description" content="GOF设计模式之享元模式(FlyWeight) 享元模式以共享的方式高效地支持大量细粒度对象的重用。 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
 <meta name="keywords" content="GOF设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GOF23设计模式（九）">
 <meta property="og:url" content="http://yoursite.com/2019/08/29/GOF23设计模式（九）/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="GOF设计模式之享元模式(FlyWeight)— 享元模式以共享的方式高效地支持大量细粒度对象的重用。— 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
+<meta property="og:description" content="GOF设计模式之享元模式(FlyWeight) 享元模式以共享的方式高效地支持大量细粒度对象的重用。 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T06:43:36.423Z">
+<meta property="og:updated_time" content="2019-08-29T14:08:52.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GOF23设计模式（九）">
-<meta name="twitter:description" content="GOF设计模式之享元模式(FlyWeight)— 享元模式以共享的方式高效地支持大量细粒度对象的重用。— 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
+<meta name="twitter:description" content="GOF设计模式之享元模式(FlyWeight) 享元模式以共享的方式高效地支持大量细粒度对象的重用。 享元对象能做到共享的关键是区分了内部状态和外部状态  ·内部状态：可以共享，不会随环境变化而改变  ·外部状态：不可以共享，会随环境变化而改变">
 
 
 
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-08-29 14:37:33 / 修改时间：14:43:36" itemprop="dateCreated datePublished" datetime="2019-08-29T14:37:33+08:00">2019-08-29</time>
+              <time title="创建时间：2019-08-29 14:37:33 / 修改时间：22:08:52" itemprop="dateCreated datePublished" datetime="2019-08-29T14:37:33+08:00">2019-08-29</time>
             </span>
           
 
@@ -461,7 +461,7 @@
       
 
       
-        <h1 id="GOF设计模式之享元模式-FlyWeight"><a href="#GOF设计模式之享元模式-FlyWeight" class="headerlink" title="GOF设计模式之享元模式(FlyWeight)"></a>GOF设计模式之享元模式(FlyWeight)</h1><p>— 享元模式以共享的方式高效地支持大量细粒度对象的重用。<br>— 享元对象能做到共享的关键是区分了内部状态和外部状态<br>  ·内部状态：可以共享，不会随环境变化而改变<br>  ·外部状态：不可以共享，会随环境变化而改变</p>
+        <h1 id="GOF设计模式之享元模式-FlyWeight"><a href="#GOF设计模式之享元模式-FlyWeight" class="headerlink" title="GOF设计模式之享元模式(FlyWeight)"></a>GOF设计模式之享元模式(FlyWeight)</h1><p> 享元模式以共享的方式高效地支持大量细粒度对象的重用。<br> 享元对象能做到共享的关键是区分了内部状态和外部状态<br>  ·内部状态：可以共享，不会随环境变化而改变<br>  ·外部状态：不可以共享，会随环境变化而改变</p>
 <a id="more"></a>
 <h1 id="享元类"><a href="#享元类" class="headerlink" title="享元类"></a>享元类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 享元类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ChessFlyWeight</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String c)</span></span>;</span><br><span class="line">	<span class="function">String <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(Coordinate c)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteChess</span> <span class="keyword">implements</span> <span class="title">ChessFlyWeight</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String color;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ConcreteChess</span><span class="params">(String color)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.color = color;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String c)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.color=c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> color;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(Coordinate c)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"棋子颜色"</span>+color);</span><br><span class="line">		System.out.println(<span class="string">"棋子位置"</span>+c.getX()+<span class="string">"-----"</span>+c.getY());</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -560,6 +560,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/08/29/GOF23设计模式（十）/" rel="prev" title="GOF23设计模式（十）">
+                GOF23设计模式（十） <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -629,7 +633,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
