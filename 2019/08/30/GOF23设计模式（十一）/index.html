@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。">
+  <meta name="description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)">
 <meta name="keywords" content="GOF设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GOF23设计模式（十一）">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/GOF23设计模式（十一）/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。">
+<meta property="og:description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T05:49:16.583Z">
+<meta property="og:updated_time" content="2019-08-30T13:29:11.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GOF23设计模式（十一）">
-<meta name="twitter:description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。">
+<meta name="twitter:description" content="GOF设计模式之中介者模式(Mediator)与命令模式(Command)">
 
 
 
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-08-30 13:48:14 / 修改时间：13:49:16" itemprop="dateCreated datePublished" datetime="2019-08-30T13:48:14+08:00">2019-08-30</time>
+              <time title="创建时间：2019-08-30 13:48:14 / 修改时间：21:29:11" itemprop="dateCreated datePublished" datetime="2019-08-30T13:48:14+08:00">2019-08-30</time>
             </span>
           
 
@@ -461,9 +461,9 @@
       
 
       
-        <h1 id="GOF设计模式之中介者模式-Mediator-与命令模式-Command"><a href="#GOF设计模式之中介者模式-Mediator-与命令模式-Command" class="headerlink" title="GOF设计模式之中介者模式(Mediator)与命令模式(Command)"></a>GOF设计模式之中介者模式(Mediator)与命令模式(Command)</h1><p>定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。</p>
-<a id="more"></a>
-<h1 id="中介者模式-Mediator"><a href="#中介者模式-Mediator" class="headerlink" title="中介者模式(Mediator)"></a>中介者模式(Mediator)</h1><h2 id="职责接口"><a href="#职责接口" class="headerlink" title="职责接口"></a>职责接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Mediator</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">register</span><span class="params">(String dname,Department d)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">command</span><span class="params">(String dname)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="GOF设计模式之中介者模式-Mediator-与命令模式-Command"><a href="#GOF设计模式之中介者模式-Mediator-与命令模式-Command" class="headerlink" title="GOF设计模式之中介者模式(Mediator)与命令模式(Command)"></a>GOF设计模式之中介者模式(Mediator)与命令模式(Command)</h1><a id="more"></a>
+<h1 id="中介者模式-Mediator"><a href="#中介者模式-Mediator" class="headerlink" title="中介者模式(Mediator)"></a>中介者模式(Mediator)</h1><p>定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。</p>
+<h2 id="职责接口"><a href="#职责接口" class="headerlink" title="职责接口"></a>职责接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Mediator</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">register</span><span class="params">(String dname,Department d)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">command</span><span class="params">(String dname)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="部门接口"><a href="#部门接口" class="headerlink" title="部门接口"></a>部门接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同事类接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Department</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">selfAction</span><span class="params">()</span></span>; <span class="comment">//做本部门的事情</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">outAction</span><span class="params">()</span></span>; <span class="comment">//发出申请</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -579,6 +579,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/08/30/GOF23设计模式（十二）/" rel="prev" title="GOF23设计模式（十二）">
+                GOF23设计模式（十二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -648,7 +652,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
