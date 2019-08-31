@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="基于TCP的多人聊天室（一）利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。">
-<meta name="keywords" content="网络编程">
+  <meta name="description" content="GOF23设计模式总结创建型模式 单例模式、工厂模式、建造者模式、原型模式。 结构型模式 装饰模式、享元模式、桥接模式、组合模式、外观模式、代理模式、适配器模式。 行为型模式 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、策略模式、状态模式、责任链模式、访问者模式。">
+<meta name="keywords" content="GOF设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于TCP的多人聊天室（一）">
-<meta property="og:url" content="http://yoursite.com/2019/08/16/基于TCP的多人聊天室（一）/index.html">
+<meta property="og:title" content="GOF23设计模式（完）">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/GOF23设计模式（完）/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="基于TCP的多人聊天室（一）利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。">
+<meta property="og:description" content="GOF23设计模式总结创建型模式 单例模式、工厂模式、建造者模式、原型模式。 结构型模式 装饰模式、享元模式、桥接模式、组合模式、外观模式、代理模式、适配器模式。 行为型模式 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、策略模式、状态模式、责任链模式、访问者模式。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T12:31:38.267Z">
+<meta property="og:updated_time" content="2019-08-31T12:36:40.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于TCP的多人聊天室（一）">
-<meta name="twitter:description" content="基于TCP的多人聊天室（一）利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。">
+<meta name="twitter:title" content="GOF23设计模式（完）">
+<meta name="twitter:description" content="GOF23设计模式总结创建型模式 单例模式、工厂模式、建造者模式、原型模式。 结构型模式 装饰模式、享元模式、桥接模式、组合模式、外观模式、代理模式、适配器模式。 行为型模式 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、策略模式、状态模式、责任链模式、访问者模式。">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/16/基于TCP的多人聊天室（一）/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/31/GOF23设计模式（完）/">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>基于TCP的多人聊天室（一） | Hello</title>
+  <title>GOF23设计模式（完） | Hello</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/基于TCP的多人聊天室（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/GOF23设计模式（完）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiskZcz">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于TCP的多人聊天室（一）
+          <h1 class="post-title" itemprop="name headline">GOF23设计模式（完）
 
               
             
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-08-16 20:23:39 / 修改时间：20:31:38" itemprop="dateCreated datePublished" datetime="2019-08-16T20:23:39+08:00">2019-08-16</time>
+              <time title="创建时间：2019-08-31 20:27:56 / 修改时间：20:36:40" itemprop="dateCreated datePublished" datetime="2019-08-31T20:27:56+08:00">2019-08-31</time>
             </span>
           
 
@@ -413,7 +413,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/GOF设计模式/" itemprop="url" rel="index"><span itemprop="name">GOF设计模式</span></a></span>
 
                 
                 
@@ -461,11 +461,35 @@
       
 
       
-        <h1 id="基于TCP的多人聊天室（一）"><a href="#基于TCP的多人聊天室（一）" class="headerlink" title="基于TCP的多人聊天室（一）"></a>基于TCP的多人聊天室（一）</h1><p>利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。<a id="more"></a></p>
-<h1 id="聊天室服务器："><a href="#聊天室服务器：" class="headerlink" title="聊天室服务器："></a>聊天室服务器：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 聊天室服务器</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chat_Server</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"-------Server-------"</span>);</span><br><span class="line">		<span class="comment">// 1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line">		ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 2.阻塞式等待链接 accept</span></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			Socket Server = server.accept();</span><br><span class="line">			System.out.println(<span class="string">"客户端连接已建立"</span>);</span><br><span class="line">			<span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">				DataInputStream dis = <span class="keyword">null</span>;</span><br><span class="line">				DataOutputStream dos = <span class="keyword">null</span>;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					dis = <span class="keyword">new</span> DataInputStream(Server.getInputStream());</span><br><span class="line">					dos = <span class="keyword">new</span> DataOutputStream(Server.getOutputStream());</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e1) &#123;</span><br><span class="line">					e1.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">				<span class="comment">// 3.操作：输入输出流</span></span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					<span class="keyword">while</span> (flag) &#123;</span><br><span class="line">						dos.writeUTF(dis.readUTF());</span><br><span class="line">						dos.flush();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">					flag=<span class="keyword">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">// 4.释放资源</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						<span class="keyword">if</span> (<span class="keyword">null</span> == dis)</span><br><span class="line">							dis.close();</span><br><span class="line">						<span class="keyword">if</span> (<span class="keyword">null</span> == dis) &#123;</span><br><span class="line">							dos.close();</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span> (<span class="keyword">null</span> == dis) &#123;</span><br><span class="line">							Server.close();</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="聊天室客户端："><a href="#聊天室客户端：" class="headerlink" title="聊天室客户端："></a>聊天室客户端：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 聊天室客户端</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chat_Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException, IOException </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"-------Client-------"</span>);</span><br><span class="line">		<span class="comment">// 1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line">		Socket Client = <span class="keyword">new</span> Socket(<span class="string">"localhost"</span>, <span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 2.操作：输入输出流</span></span><br><span class="line">		DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(Client.getOutputStream());</span><br><span class="line">		BufferedReader bf = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">		DataInputStream dis = <span class="keyword">new</span> DataInputStream(Client.getInputStream());</span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">while</span> (flag) &#123;</span><br><span class="line">			String st = bf.readLine();</span><br><span class="line">			dos.writeUTF(st);</span><br><span class="line">			dos.flush();</span><br><span class="line">			String sss = dis.readUTF();</span><br><span class="line">			System.out.println(sss);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 释放资源</span></span><br><span class="line">		dis.close();</span><br><span class="line">		dos.close();</span><br><span class="line">		Client.close();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="GOF23设计模式总结"><a href="#GOF23设计模式总结" class="headerlink" title="GOF23设计模式总结"></a>GOF23设计模式总结</h1><h1 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h1><p> 单例模式、工厂模式、建造者模式、原型模式。</p>
+<h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><p> 装饰模式、享元模式、桥接模式、组合模式、外观模式、代理模式、适配器模式。</p>
+<h1 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h1><p> 模板方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、策略模式、状态模式、责任链模式、访问者模式。</p>
+<a id="more"></a>
+<h1 id="创建型模式-1"><a href="#创建型模式-1" class="headerlink" title="创建型模式"></a>创建型模式</h1><p>  关注对象的创建过程。</p>
+<h2 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式(Singleton)"></a>单例模式(Singleton)</h2><p> 保证一个类只有一个实例，并且提供一个访问该实例的全局访问点。</p>
+<h2 id="工厂模式-Factory"><a href="#工厂模式-Factory" class="headerlink" title="工厂模式(Factory)"></a>工厂模式(Factory)</h2><p> 实例化对象，用工厂方法代替new操作。<br> 将选择实现类、创建对象统一管理和控制。从而将调用者跟我们的实现类解耦。</p>
+<h2 id="建造者模式-Builder"><a href="#建造者模式-Builder" class="headerlink" title="建造者模式(Builder)"></a>建造者模式(Builder)</h2><p> 具体的建造者类之间是相互独立的，容易扩展。</p>
+<h2 id="原型模式-Prototype"><a href="#原型模式-Prototype" class="headerlink" title="原型模式(Prototype)"></a>原型模式(Prototype)</h2><p> 扩展性好，由于写原型模式的时候使用了抽象原型类，在客户端进行编程的时候可以将具体的原型类通过配置进行读取。</p>
+<h1 id="结构型模式-1"><a href="#结构型模式-1" class="headerlink" title="结构型模式"></a>结构型模式</h1><p>关注对象和类的组织。</p>
+<h2 id="适配器-Adapter-模式"><a href="#适配器-Adapter-模式" class="headerlink" title="适配器(Adapter)模式"></a>适配器(Adapter)模式</h2><p> 将一个类的接口转换成客户希望的另外一个接口，Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以在一起工作。</p>
+<h2 id="代理模式-Proxy-pattern"><a href="#代理模式-Proxy-pattern" class="headerlink" title="代理模式(Proxy pattern)"></a>代理模式(Proxy pattern)</h2><p> 通过代理，控制对对象的访问。</p>
+<h2 id="桥接模式-bridge"><a href="#桥接模式-bridge" class="headerlink" title="桥接模式(bridge)"></a>桥接模式(bridge)</h2><p> 桥接模式可以取代多层继承的方案。多层继承违背了单一职责原则，复用性较差，类的个数也非常多。桥接模式可以极大的减少子类的个数，从而降低管理和维护的成本。<br> 桥接模式极大提高了系统可扩展性，在两个变化维度中任意扩展一个维度，都不需要修改原有的系统，符合开闭原则。</p>
+<h2 id="组合模式-composite"><a href="#组合模式-composite" class="headerlink" title="组合模式(composite)"></a>组合模式(composite)</h2><p> 抽象构件(Component)角色：定义了叶子和容器构件的共同点。<br> 叶子(Leaf)构件角色：无子节点。<br> 容器(Composite)构件角色：有容器特征，可以包含子节点。</p>
+<h2 id="装饰模式-decorator"><a href="#装饰模式-decorator" class="headerlink" title="装饰模式(decorator)"></a>装饰模式(decorator)</h2><p> 动态的为一个对象增加新功能。<br> 装饰模式是一种用于代替继承的技术，无需通过继承增加子类就能扩展对象的新功能。使用对象的关联关系代替继承关系，更加灵活，同时避免类型体系的快速膨胀。</p>
+<h2 id="外观模式-Facade"><a href="#外观模式-Facade" class="headerlink" title="外观模式(Facade)"></a>外观模式(Facade)</h2><p> 为子系统提供统一的入口，封装子系统的复杂性，便于客户端调用。</p>
+<h2 id="享元模式-FlyWeight"><a href="#享元模式-FlyWeight" class="headerlink" title="享元模式(FlyWeight)"></a>享元模式(FlyWeight)</h2><p> 享元模式以共享的方式高效地支持大量细粒度对象的重用。<br> 享元对象能做到共享的关键是区分了内部状态和外部状态<br>  ·内部状态：可以共享，不会随环境变化而改变<br>  ·外部状态：不可以共享，会随环境变化而改变</p>
+<h1 id="行为型模式-1"><a href="#行为型模式-1" class="headerlink" title="行为型模式"></a>行为型模式</h1><p>  关注系统中对象之间的相互交互研究系统在运行时对象之间的相互通信和协作，进一步明确对象的职责。</p>
+<h2 id="责任链模式-Chain-of-Responsibility"><a href="#责任链模式-Chain-of-Responsibility" class="headerlink" title="责任链模式(Chain of Responsibility)"></a>责任链模式(Chain of Responsibility)</h2><p> 将能够处理同一类请求的对象连成一条链，所提交的请求沿着链传递，链上的对象逐个判断是否有能力处理该请求，如果能则处理，如果不能则传递给链上的下一个对象.</p>
+<h2 id="迭代器模式-iterator"><a href="#迭代器模式-iterator" class="headerlink" title="迭代器模式(iterator)"></a>迭代器模式(iterator)</h2><p> 提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。</p>
+<h2 id="中介者模式-Mediator"><a href="#中介者模式-Mediator" class="headerlink" title="中介者模式(Mediator)"></a>中介者模式(Mediator)</h2><p> 定义一个中介对象来封装一系列对象之间的交互，使原有对象之间的耦合松散，且可以独立地改变它们之间的交互。中介者模式又叫调停模式，它是迪米特法则的典型应用。</p>
+<h2 id="命令模式-command"><a href="#命令模式-command" class="headerlink" title="命令模式(command)"></a>命令模式(command)</h2><p> 将请求封装为一个对象，从而使我们可用不同的请求对客户端进行参数化。</p>
+<h2 id="解释器模式-Interpreter"><a href="#解释器模式-Interpreter" class="headerlink" title="解释器模式(Interpreter)"></a>解释器模式(Interpreter)</h2><p> 用于描述如何构成一个简单的语言解释器，主要用于使用面向对象语言开发的编译器和解释器设计。</p>
+<h2 id="访问者模式-Visitor"><a href="#访问者模式-Visitor" class="headerlink" title="访问者模式(Visitor)"></a>访问者模式(Visitor)</h2><p> 表示一个作用于对象结构中的各元素的操作，它使我们可以在不改变元素的类的前提下定义作用于这些元素的新操作。</p>
+<h2 id="策略模式-Strategy"><a href="#策略模式-Strategy" class="headerlink" title="策略模式(Strategy)"></a>策略模式(Strategy)</h2><p> 分离算法，选择实现。</p>
+<h2 id="模板方法模式-template-method"><a href="#模板方法模式-template-method" class="headerlink" title="模板方法模式(template method)"></a>模板方法模式(template method)</h2><p> 定义一个操作中的算法骨架，将某些步骤延迟到子类中实现。</p>
+<h2 id="状态模式-state"><a href="#状态模式-state" class="headerlink" title="状态模式(state)"></a>状态模式(state)</h2><p> 用于解决系统中复杂对象的状态转换以及不同状态下行为的封装问题。</p>
+<h2 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式(Observer)"></a>观察者模式(Observer)</h2><p> 主要用于1:N的通知。当一个对象的状态变化时，他需要及时告知一系列对象，令他们做出响应。</p>
+<h2 id="备忘录模式-memento"><a href="#备忘录模式-memento" class="headerlink" title="备忘录模式(memento)"></a>备忘录模式(memento)</h2><p> 保存某个对象内部状态的拷贝，这样以后就可以将该对象恢复到原先的状态。</p>
 
       
     </div>
@@ -529,7 +553,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/网络编程/" rel="tag"># 网络编程</a>
+            <a href="/tags/GOF设计模式/" rel="tag"># GOF设计模式</a>
           
         </div>
       
@@ -542,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/16/多人登录验证/" rel="next" title="多人登录验证">
-                <i class="fa fa-chevron-left"></i> 多人登录验证
+              <a href="/2019/08/31/GOF23设计模式（十五）/" rel="next" title="GOF23设计模式（十五）">
+                <i class="fa fa-chevron-left"></i> GOF23设计模式（十五）
               </a>
             
           </div>
@@ -551,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/20/基于TCP的多人聊天室（二）/" rel="prev" title="基于TCP的多人聊天室（二）">
-                基于TCP的多人聊天室（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基于TCP的多人聊天室（一）"><span class="nav-number">1.</span> <span class="nav-text">基于TCP的多人聊天室（一）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#聊天室服务器："><span class="nav-number">2.</span> <span class="nav-text">聊天室服务器：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#聊天室客户端："><span class="nav-number">3.</span> <span class="nav-text">聊天室客户端：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GOF23设计模式总结"><span class="nav-number">1.</span> <span class="nav-text">GOF23设计模式总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建型模式"><span class="nav-number">2.</span> <span class="nav-text">创建型模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构型模式"><span class="nav-number">3.</span> <span class="nav-text">结构型模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行为型模式"><span class="nav-number">4.</span> <span class="nav-text">行为型模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建型模式-1"><span class="nav-number">5.</span> <span class="nav-text">创建型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式-Singleton"><span class="nav-number">5.1.</span> <span class="nav-text">单例模式(Singleton)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式-Factory"><span class="nav-number">5.2.</span> <span class="nav-text">工厂模式(Factory)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建造者模式-Builder"><span class="nav-number">5.3.</span> <span class="nav-text">建造者模式(Builder)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型模式-Prototype"><span class="nav-number">5.4.</span> <span class="nav-text">原型模式(Prototype)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构型模式-1"><span class="nav-number">6.</span> <span class="nav-text">结构型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器-Adapter-模式"><span class="nav-number">6.1.</span> <span class="nav-text">适配器(Adapter)模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理模式-Proxy-pattern"><span class="nav-number">6.2.</span> <span class="nav-text">代理模式(Proxy pattern)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桥接模式-bridge"><span class="nav-number">6.3.</span> <span class="nav-text">桥接模式(bridge)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合模式-composite"><span class="nav-number">6.4.</span> <span class="nav-text">组合模式(composite)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰模式-decorator"><span class="nav-number">6.5.</span> <span class="nav-text">装饰模式(decorator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外观模式-Facade"><span class="nav-number">6.6.</span> <span class="nav-text">外观模式(Facade)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#享元模式-FlyWeight"><span class="nav-number">6.7.</span> <span class="nav-text">享元模式(FlyWeight)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行为型模式-1"><span class="nav-number">7.</span> <span class="nav-text">行为型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#责任链模式-Chain-of-Responsibility"><span class="nav-number">7.1.</span> <span class="nav-text">责任链模式(Chain of Responsibility)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器模式-iterator"><span class="nav-number">7.2.</span> <span class="nav-text">迭代器模式(iterator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中介者模式-Mediator"><span class="nav-number">7.3.</span> <span class="nav-text">中介者模式(Mediator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令模式-command"><span class="nav-number">7.4.</span> <span class="nav-text">命令模式(command)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释器模式-Interpreter"><span class="nav-number">7.5.</span> <span class="nav-text">解释器模式(Interpreter)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问者模式-Visitor"><span class="nav-number">7.6.</span> <span class="nav-text">访问者模式(Visitor)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略模式-Strategy"><span class="nav-number">7.7.</span> <span class="nav-text">策略模式(Strategy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法模式-template-method"><span class="nav-number">7.8.</span> <span class="nav-text">模板方法模式(template method)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态模式-state"><span class="nav-number">7.9.</span> <span class="nav-text">状态模式(state)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式-Observer"><span class="nav-number">7.10.</span> <span class="nav-text">观察者模式(Observer)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘录模式-memento"><span class="nav-number">7.11.</span> <span class="nav-text">备忘录模式(memento)</span></a></li></ol></li></ol></div>
             
 
           </div>
