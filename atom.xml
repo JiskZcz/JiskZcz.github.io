@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-31T12:36:40.367Z</updated>
+  <updated>2019-09-04T15:35:41.496Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL数据库之事务</title>
+    <link href="http://yoursite.com/2019/09/04/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://yoursite.com/2019/09/04/MySQL数据库之事务/</id>
+    <published>2019-09-04T15:30:00.000Z</published>
+    <updated>2019-09-04T15:35:41.496Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>数据库的事务。<a id="more"></a></p><h2 id="事务基本概念"><a href="#事务基本概念" class="headerlink" title="事务基本概念"></a>事务基本概念</h2><p>一组要么同时执行成功，要么同时执行失败的SQL语句，是数据库操作的一个执行单元。</p><h2 id="事物开始于"><a href="#事物开始于" class="headerlink" title="事物开始于"></a>事物开始于</h2><p>连接到数据库上，并执行一条DML语句(INSERT、UPDATE或DELETE)</p><p>前一个事务结束后，又输入了另一条DML语句。</p><h2 id="事务结束于"><a href="#事务结束于" class="headerlink" title="事务结束于"></a>事务结束于</h2><p>执行COMMIT或ROLLBAC。</p><p>执行一条DDL语句，例如CREATE TABLE或；在这种情况下，会自动执行COMMIT语句。</p><p>执行一条DCL语句，例如GRANT语句；在这种情况下，会自动执行COMMIT语句。</p><p>断开与数据库的连接。</p><p>执行了一套DML，该语句却失败了；在这种情况中，会为这个无效的DML语句执行ROLLBACK语句。</p><h1 id="事务的四大特点-ACID"><a href="#事务的四大特点-ACID" class="headerlink" title="事务的四大特点(ACID)"></a>事务的四大特点(ACID)</h1><p>atomicity（原子性）<br>·表示一个事务内的所有操作是一个整体，要么全部成功，要么全失败；</p><p>consistency（一致性）<br>·表示一个事务内有一个操作失败时，所有的更改过的数据都必须回滚到修改前的状态。</p><p>isolation（隔离性）<br>·事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看中间状态的数据。</p><p>durability（持久性）<br>·持久性事务完成之后，它对于系统的影响是永久性的。</p><h1 id="事务隔离级别从低到高"><a href="#事务隔离级别从低到高" class="headerlink" title="事务隔离级别从低到高"></a>事务隔离级别从低到高</h1><p>读取未提交（Read Uncommitted）</p><p>读取已提交（Read Committed）</p><p>可重复读（Repeatable Read）</p><p>序列化（serializable）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h1&gt;&lt;p&gt;数据库的事务。
+    
+    </summary>
+    
+      <category term="MySQL数据库" scheme="http://yoursite.com/categories/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL数据库" scheme="http://yoursite.com/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>GOF23设计模式（完）</title>
@@ -426,28 +448,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;多人登录验证&quot;&gt;&lt;a href=&quot;#多人登录验证&quot; class=&quot;headerlink&quot; title=&quot;多人登录验证&quot;&gt;&lt;/a&gt;多人登录验证&lt;/h1&gt;&lt;p&gt;请求响应模式下多人验证模式
-    
-    </summary>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-    
-      <category term="网络编程" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP文件上传</title>
-    <link href="http://yoursite.com/2019/08/15/TCP%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
-    <id>http://yoursite.com/2019/08/15/TCP文件上传/</id>
-    <published>2019-08-15T13:05:41.000Z</published>
-    <updated>2019-08-26T06:48:07.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="TCP文件上传"><a href="#TCP文件上传" class="headerlink" title="TCP文件上传"></a>TCP文件上传</h1><p>实现文件上传与服务器文件下载与拷贝。<a id="more"></a></p><h1 id="文件服务器："><a href="#文件服务器：" class="headerlink" title="文件服务器："></a>文件服务器：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 文件服务器（下载|拷贝）：</span></span><br><span class="line"><span class="comment"> * 1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line"><span class="comment"> * 2.阻塞式等待链接 accept 返回一个Socket</span></span><br><span class="line"><span class="comment"> * 3.操作：输入输出流</span></span><br><span class="line"><span class="comment"> * 4.释放资源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">File_Server</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"-------Server-------"</span>);</span><br><span class="line"><span class="comment">//1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line">ServerSocket SS=<span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line"><span class="comment">// 2.阻塞式等待链接 accept</span></span><br><span class="line">Socket Client=SS.accept();</span><br><span class="line">System.out.println(<span class="string">"客户端连接已建立"</span>);</span><br><span class="line"><span class="comment">// 3.操作：输入输出流</span></span><br><span class="line">InputStream buf=<span class="keyword">new</span> BufferedInputStream(Client.getInputStream());</span><br><span class="line">OutputStream bof=<span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"c.txt"</span>));</span><br><span class="line"><span class="keyword">byte</span> b[]=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">while</span>(buf.read(b)!=-<span class="number">1</span>) &#123;</span><br><span class="line">bof.write(b);</span><br><span class="line">&#125;</span><br><span class="line">bof.flush();</span><br><span class="line"><span class="comment">// 4.释放资源</span></span><br><span class="line">bof.close();</span><br><span class="line">buf.close();</span><br><span class="line">Client.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="文件客户端："><a href="#文件客户端：" class="headerlink" title="文件客户端："></a>文件客户端：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 文件客户端（上传）：</span></span><br><span class="line"><span class="comment"> * 1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line"><span class="comment"> * 2.操作：输入输出流</span></span><br><span class="line"><span class="comment"> * 3.释放资源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">File_Client</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"-------Client-------"</span>);</span><br><span class="line"><span class="comment">//1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line">Socket S=<span class="keyword">new</span> Socket(<span class="string">"localhost"</span>,<span class="number">6666</span>);</span><br><span class="line"><span class="comment">// 3.操作：输入输出流</span></span><br><span class="line">InputStream buf=<span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"D:/javawork/java 17级软工学生体测数据统计系统/用户信息.txt"</span>));</span><br><span class="line">OutputStream bof=<span class="keyword">new</span> BufferedOutputStream(S.getOutputStream());</span><br><span class="line"><span class="keyword">byte</span> b[]=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">while</span>(buf.read(b)!=-<span class="number">1</span>) &#123;</span><br><span class="line">bof.write(b);</span><br><span class="line">&#125;</span><br><span class="line">bof.flush();</span><br><span class="line"><span class="comment">// 4.释放资源</span></span><br><span class="line">S.close();</span><br><span class="line">buf.close();</span><br><span class="line">bof.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;TCP文件上传&quot;&gt;&lt;a href=&quot;#TCP文件上传&quot; class=&quot;headerlink&quot; title=&quot;TCP文件上传&quot;&gt;&lt;/a&gt;TCP文件上传&lt;/h1&gt;&lt;p&gt;实现文件上传与服务器文件下载与拷贝。
     
     </summary>
     
