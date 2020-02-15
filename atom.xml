@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-19T12:05:59.990Z</updated>
+  <updated>2020-02-15T01:56:24.112Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Servlet生命周期</title>
+    <link href="http://yoursite.com/2020/02/15/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://yoursite.com/2020/02/15/Servlet生命周期/</id>
+    <published>2020-02-15T01:36:06.000Z</published>
+    <updated>2020-02-15T01:56:24.112Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Servlet生命周期"><a href="#Servlet生命周期" class="headerlink" title="Servlet生命周期"></a>Servlet生命周期</h1><p>   Servlet生命周期由构造器、init方法、service方法和destroy方法组成。<a id="more"></a></p><h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><p>   只被调用一次，只有第一次请求Servlet时，创建Servlet的实例，调用构造器。</p><h2 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a>init方法</h2><p>   只被调用一次，再创建好实例后立即被调用，用于初始当前的Servlet。</p><h2 id="service方法"><a href="#service方法" class="headerlink" title="service方法"></a>service方法</h2><p>   被多次调用，每次请求都会调用service方法。实际用于响应请求的。</p><h2 id="destroy方法"><a href="#destroy方法" class="headerlink" title="destroy方法"></a>destroy方法</h2><p>   只被调用一次，在当前Servlet所在的WEB应用被卸载前调用，用于释放当前Servlet所占用的资源。</p><h1 id="load-on-startup"><a href="#load-on-startup" class="headerlink" title="load-on-startup"></a>load-on-startup</h1><p>  补充说一下，load-on-startup可以指定Servlet被创建的时机，若为负数，则在第一次请求时被创建，若为0或正数，则在当前WEB应用被调用Servlet<br>容器加载时创建实例，且数字越小越早被创建。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;load-on-startup&gt;任意数字&lt;/load-on-startup&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Servlet生命周期&quot;&gt;&lt;a href=&quot;#Servlet生命周期&quot; class=&quot;headerlink&quot; title=&quot;Servlet生命周期&quot;&gt;&lt;/a&gt;Servlet生命周期&lt;/h1&gt;&lt;p&gt;   Servlet生命周期由构造器、init方法、service方法和destroy方法组成。
+    
+    </summary>
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/categories/JavaWeb/"/>
+    
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL存储过程的语法</title>
@@ -426,28 +448,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;基于TCP的多人聊天室（二）&quot;&gt;&lt;a href=&quot;#基于TCP的多人聊天室（二）&quot; class=&quot;headerlink&quot; title=&quot;基于TCP的多人聊天室（二）&quot;&gt;&lt;/a&gt;基于TCP的多人聊天室（二）&lt;/h1&gt;&lt;p&gt;进行了封装，没有写单独的一个类，可自行实现，实现了多人聊天，没有实现私聊和一些细节问题，等有空再实现。
-    
-    </summary>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-    
-      <category term="网络编程" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于TCP的多人聊天室（一）</title>
-    <link href="http://yoursite.com/2019/08/16/%E5%9F%BA%E4%BA%8ETCP%E7%9A%84%E5%A4%9A%E4%BA%BA%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://yoursite.com/2019/08/16/基于TCP的多人聊天室（一）/</id>
-    <published>2019-08-16T12:23:39.000Z</published>
-    <updated>2019-08-16T12:31:38.267Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基于TCP的多人聊天室（一）"><a href="#基于TCP的多人聊天室（一）" class="headerlink" title="基于TCP的多人聊天室（一）"></a>基于TCP的多人聊天室（一）</h1><p>利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。<a id="more"></a></p><h1 id="聊天室服务器："><a href="#聊天室服务器：" class="headerlink" title="聊天室服务器："></a>聊天室服务器：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 聊天室服务器</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chat_Server</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"-------Server-------"</span>);</span><br><span class="line"><span class="comment">// 1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line">ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line"><span class="comment">// 2.阻塞式等待链接 accept</span></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">Socket Server = server.accept();</span><br><span class="line">System.out.println(<span class="string">"客户端连接已建立"</span>);</span><br><span class="line"><span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">DataInputStream dis = <span class="keyword">null</span>;</span><br><span class="line">DataOutputStream dos = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">dis = <span class="keyword">new</span> DataInputStream(Server.getInputStream());</span><br><span class="line">dos = <span class="keyword">new</span> DataOutputStream(Server.getOutputStream());</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e1) &#123;</span><br><span class="line">e1.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">// 3.操作：输入输出流</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">while</span> (flag) &#123;</span><br><span class="line">dos.writeUTF(dis.readUTF());</span><br><span class="line">dos.flush();</span><br><span class="line">&#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">flag=<span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4.释放资源</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> == dis)</span><br><span class="line">dis.close();</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> == dis) &#123;</span><br><span class="line">dos.close();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> == dis) &#123;</span><br><span class="line">Server.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line"><span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;).start();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="聊天室客户端："><a href="#聊天室客户端：" class="headerlink" title="聊天室客户端："></a>聊天室客户端：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 聊天室客户端</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chat_Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException, IOException </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"-------Client-------"</span>);</span><br><span class="line"><span class="comment">// 1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line">Socket Client = <span class="keyword">new</span> Socket(<span class="string">"localhost"</span>, <span class="number">6666</span>);</span><br><span class="line"><span class="comment">// 2.操作：输入输出流</span></span><br><span class="line">DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(Client.getOutputStream());</span><br><span class="line">BufferedReader bf = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">DataInputStream dis = <span class="keyword">new</span> DataInputStream(Client.getInputStream());</span><br><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag) &#123;</span><br><span class="line">String st = bf.readLine();</span><br><span class="line">dos.writeUTF(st);</span><br><span class="line">dos.flush();</span><br><span class="line">String sss = dis.readUTF();</span><br><span class="line">System.out.println(sss);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 释放资源</span></span><br><span class="line">dis.close();</span><br><span class="line">dos.close();</span><br><span class="line">Client.close();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基于TCP的多人聊天室（一）&quot;&gt;&lt;a href=&quot;#基于TCP的多人聊天室（一）&quot; class=&quot;headerlink&quot; title=&quot;基于TCP的多人聊天室（一）&quot;&gt;&lt;/a&gt;基于TCP的多人聊天室（一）&lt;/h1&gt;&lt;p&gt;利用TCP来实现网络多人聊天室，此版本只能实现发送接收，不能随意发言，还没实现客户端互相传输，只能自己发送自己接收。
     
     </summary>
     
