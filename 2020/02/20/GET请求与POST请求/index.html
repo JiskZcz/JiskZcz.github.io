@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello">
 <meta property="og:description" content="在我们获取信息前需要了解GET请求和POST请求是HTTP请求的两种基本方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-20T07:10:21.034Z">
+<meta property="og:updated_time" content="2020-02-21T02:42:03.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 Serlvet 中获取请求信息">
 <meta name="twitter:description" content="在我们获取信息前需要了解GET请求和POST请求是HTTP请求的两种基本方法。">
@@ -394,13 +394,23 @@
                 
               
 
-              <time title="创建时间：2020-02-20 14:30:30 / 修改时间：15:10:21" itemprop="dateCreated datePublished" datetime="2020-02-20T14:30:30+08:00">2020-02-20</time>
+              <time title="创建时间：2020-02-20 14:30:30" itemprop="dateCreated datePublished" datetime="2020-02-20T14:30:30+08:00">2020-02-20</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-21 10:42:03" itemprop="dateModified" datetime="2020-02-21T10:42:03+08:00">2020-02-21</time>
+              </span>
             
           
 
@@ -480,7 +490,10 @@
 <blockquote><p>123<br>reading game party<br>/JavaWeb_Study/loginServlet<br>POST<br>null<br>/loginServlet</p>
 </blockquote>
 
-<h1 id="ServletResponse的方法"><a href="#ServletResponse的方法" class="headerlink" title="ServletResponse的方法"></a>ServletResponse的方法</h1><p>①getWriter(): 返回 PrintWriter 对象. 调用该对象的 print() 方法, 将把 print() 中的参数直接打印<br>到客户的浏览器上.<br>②设置响应的内容类型: response.setContentType(“application/msword”);<br>③void sendRedirect(String location): 请求的重定向. (此方法为 HttpServletResponse 中定义.)</p>
+<h1 id="ServletResponse的方法"><a href="#ServletResponse的方法" class="headerlink" title="ServletResponse的方法"></a>ServletResponse的方法</h1><p>①getWriter(): 返回 PrintWriter 对象. 调用该对象的 print() 方法, 将把 print() 中的参数直接打印<br>到客户的浏览器上. getOutputStream()，一般用来输出二进制内容，例如图片。getWriter()，用来输出文本类型的内容，如HTML和纯文本。<br>文本输出情况下需设置编码类型，在调用response.getWriter()前，我们必须设置content type</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html; charset=GBK"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>②设置响应的内容类型: response.setContentType(“application/msword”);<br>③void sendRedirect(String location): 请求的重定向. (此方法为 HttpServletResponse 中定义.)</p>
 
       
     </div>
@@ -567,6 +580,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/02/22/关于JSP/" rel="prev" title="关于JSP">
+                关于JSP <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -636,7 +653,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -716,7 +733,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
