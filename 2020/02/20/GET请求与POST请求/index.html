@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello">
 <meta property="og:description" content="在我们获取信息前需要了解GET请求和POST请求是HTTP请求的两种基本方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-21T02:42:03.307Z">
+<meta property="og:updated_time" content="2020-02-23T07:16:21.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 Serlvet 中获取请求信息">
 <meta name="twitter:description" content="在我们获取信息前需要了解GET请求和POST请求是HTTP请求的两种基本方法。">
@@ -409,7 +409,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-21 10:42:03" itemprop="dateModified" datetime="2020-02-21T10:42:03+08:00">2020-02-21</time>
+                <time title="修改时间：2020-02-23 15:16:21" itemprop="dateModified" datetime="2020-02-23T15:16:21+08:00">2020-02-23</time>
               </span>
             
           
@@ -494,6 +494,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html; charset=GBK"</span>);</span><br></pre></td></tr></table></figure>
 
 <p>②设置响应的内容类型: response.setContentType(“application/msword”);<br>③void sendRedirect(String location): 请求的重定向. (此方法为 HttpServletResponse 中定义.)</p>
+<h1 id="请求的转发和重定向"><a href="#请求的转发和重定向" class="headerlink" title="请求的转发和重定向"></a>请求的转发和重定向</h1><p>本质区别: 请求的转发只发出了一次请求, 而重定向则发出了两次请求. </p>
+<p>具体:</p>
+<p>①. 请求的转发: 地址栏是初次发出请求的地址.<br>       请求的重定向: 地址栏不再是初次发出的请求地址. 地址栏为最后响应的那个地址 </p>
+<p>②. 请求转发: 在最终的 Servlet 中, request 对象和中转的那个 request 是同一个对象.<br>       请求的重定向: 在最终的 Servlet 中, request 对象和中转的那个 request 不是同一个对象.       </p>
+<p>③. 请求的转发: 只能转发给当前 WEB 应用的的资源<br>       请求的重定向: 可以重定向到任何资源. </p>
+<p>④. 请求的转发: / 代表的是当前 WEB 应用的根目录<br>       请求的重定向: / 代表的是当前 WEB 站点的根目录. </p>
 
       
     </div>
@@ -802,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST请求"><span class="nav-number">2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何在-Serlvet-中获取请求信息"><span class="nav-number">3.</span> <span class="nav-text">如何在 Serlvet 中获取请求信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletRequest的方法"><span class="nav-number">3.1.</span> <span class="nav-text">ServletRequest的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ServletResponse的方法"><span class="nav-number">4.</span> <span class="nav-text">ServletResponse的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST请求"><span class="nav-number">2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何在-Serlvet-中获取请求信息"><span class="nav-number">3.</span> <span class="nav-text">如何在 Serlvet 中获取请求信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletRequest的方法"><span class="nav-number">3.1.</span> <span class="nav-text">ServletRequest的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ServletResponse的方法"><span class="nav-number">4.</span> <span class="nav-text">ServletResponse的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求的转发和重定向"><span class="nav-number">5.</span> <span class="nav-text">请求的转发和重定向</span></a></li></ol></div>
             
 
           </div>
