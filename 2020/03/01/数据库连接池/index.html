@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="TCP单向通讯在网络通讯中，第一次主动发起通讯的程序被称作客户端(Client)程序，简称客户端，而在第一次通讯中等待连接的程序被称作服务器端(Server)程序，简称服务器。一旦通讯建立，则客户端和服务器端完全一样，没有本质的区别。">
-<meta name="keywords" content="网络编程">
+  <meta name="description" content="这里使用常用的两种创建数据库连接池的方法,dbcp与c3p0">
+<meta name="keywords" content="数据库处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP单向通讯">
-<meta property="og:url" content="http://yoursite.com/2019/08/15/TCP单向通讯/index.html">
+<meta property="og:title" content="数据库连接池">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/数据库连接池/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="TCP单向通讯在网络通讯中，第一次主动发起通讯的程序被称作客户端(Client)程序，简称客户端，而在第一次通讯中等待连接的程序被称作服务器端(Server)程序，简称服务器。一旦通讯建立，则客户端和服务器端完全一样，没有本质的区别。">
+<meta property="og:description" content="这里使用常用的两种创建数据库连接池的方法,dbcp与c3p0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T05:23:40.589Z">
+<meta property="og:updated_time" content="2020-03-01T04:52:00.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP单向通讯">
-<meta name="twitter:description" content="TCP单向通讯在网络通讯中，第一次主动发起通讯的程序被称作客户端(Client)程序，简称客户端，而在第一次通讯中等待连接的程序被称作服务器端(Server)程序，简称服务器。一旦通讯建立，则客户端和服务器端完全一样，没有本质的区别。">
+<meta name="twitter:title" content="数据库连接池">
+<meta name="twitter:description" content="这里使用常用的两种创建数据库连接池的方法,dbcp与c3p0">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/15/TCP单向通讯/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/01/数据库连接池/">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>TCP单向通讯 | Hello</title>
+  <title>数据库连接池 | Hello</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/TCP单向通讯/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/数据库连接池/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiskZcz">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TCP单向通讯
+          <h1 class="post-title" itemprop="name headline">数据库连接池
 
               
             
@@ -394,23 +394,13 @@
                 
               
 
-              <time title="创建时间：2019-08-15 20:48:48" itemprop="dateCreated datePublished" datetime="2019-08-15T20:48:48+08:00">2019-08-15</time>
+              <time title="创建时间：2020-03-01 12:27:15 / 修改时间：12:52:00" itemprop="dateCreated datePublished" datetime="2020-03-01T12:27:15+08:00">2020-03-01</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-16 13:23:40" itemprop="dateModified" datetime="2019-08-16T13:23:40+08:00">2019-08-16</time>
-              </span>
             
           
 
@@ -471,26 +461,20 @@
       
 
       
-        <h1 id="TCP单向通讯"><a href="#TCP单向通讯" class="headerlink" title="TCP单向通讯"></a>TCP单向通讯</h1><p>在网络通讯中，第一次主动发起通讯的程序被称作客户端(Client)程序，简称客户端，而在第一次通讯中等待连接的程序被称作服务器端(Server)程序，简称服务器。一旦通讯建立，则客户端和服务器端完全一样，没有本质的区别。<a id="more"></a></p>
-<h1 id="请求-响应模式："><a href="#请求-响应模式：" class="headerlink" title="请求-响应模式："></a>请求-响应模式：</h1><ol>
-<li>Socket类：发送TCP消息。</li>
-<li>ServerSocket类：创建服务器。<br>套接字是一种进程间的数据交换机制。这些进程既可以在同一机器上，也可以在通过网络连接的不同机器上。换句话说，套接字起到通信端点的作用。单个套接字是一个端点，而一对套接字则构成一个双向通信信道，使非关联进程可以在本地或通过网络进行数据交换。一旦建立套接字连接，数据即可在相同或不同的系统中双向或单向发送，直到其中一个端点关闭连接。套接字与主机地址和端口地址相关联。主机地址就是客户端或服务器程序所在的主机的IP地址。端口地址是指客户端或服务器程序使用的主机的通信端口。<br>在客户端和服务器中，分别创建独立的Socket，并通过Socket的属性，将两个Socket进行连接，这样，客户端和服务器通过套接字所建立的连接使用输入输出流进行通信。<br>TCP/IP套接字是最可靠的双向流协议，使用TCP/IP可以发送任意数量的数据。<br>实际上，套接字只是计算机上已编号的端口。如果发送方和接收方计算机确定好端口，他们就可以通信了。<h1 id="TCP-IP通信连接的简单过程："><a href="#TCP-IP通信连接的简单过程：" class="headerlink" title="TCP/IP通信连接的简单过程："></a>TCP/IP通信连接的简单过程：</h1>位于A计算机上的TCP/IP软件向B计算机发送包含端口号的消息，B计算机的TCP/IP软件接收该消息，并进行检查，查看是否有它知道的程序正在该端口上接收消息。如果有，他就将该消息交给这个程序。<br>要使程序有效地运行，就必须有一个客户端和一个服务器。<h1 id="通过Socket的编程顺序："><a href="#通过Socket的编程顺序：" class="headerlink" title="通过Socket的编程顺序："></a>通过Socket的编程顺序：</h1></li>
-<li>创建服务器ServerSocket，在创建时，定义ServerSocket的监听端口(在这个端口接收客户端发来的消息)。</li>
-<li>ServerSocket调用accept()方法，使之处于阻塞状态。</li>
-<li>创建客户端Socket，并设置服务器的IP及端口。</li>
-<li>客户端发出连接请求，建立连接。</li>
-<li>分别取得服务器和客户端Socket的InputStream和OutputStream。</li>
-<li>利用Socket和ServerSocket进行数据传输。</li>
-<li>关闭流及Socket。<h1 id="单项通讯服务器："><a href="#单项通讯服务器：" class="headerlink" title="单项通讯服务器："></a>单项通讯服务器：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 服务器：</span></span><br><span class="line"><span class="comment"> * 1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line"><span class="comment"> * 2.阻塞式等待链接 accept 返回一个Socket</span></span><br><span class="line"><span class="comment"> * 3.操作：输入输出流</span></span><br><span class="line"><span class="comment"> * 4.释放资源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCP_Server</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"-------Server-------"</span>);</span><br><span class="line">		<span class="comment">//1.指定端口，使用ServerSocket创建服务器</span></span><br><span class="line">		ServerSocket SS=<span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 2.阻塞式等待链接 accept</span></span><br><span class="line">		Socket Client=SS.accept();</span><br><span class="line">		System.out.println(<span class="string">"客户端连接已建立"</span>);</span><br><span class="line">		<span class="comment">// 3.操作：输入输出流</span></span><br><span class="line">		DataInputStream dis=<span class="keyword">new</span> DataInputStream(Client.getInputStream());</span><br><span class="line">		String st=dis.readUTF();</span><br><span class="line">		System.out.println(st);</span><br><span class="line">		<span class="comment">// 4.释放资源</span></span><br><span class="line">		dis.close();</span><br><span class="line">		Client.close();</span><br><span class="line">	&#125;<span class="comment">//先启动服务器在启动客户端</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>这里使用常用的两种创建数据库连接池的方法,dbcp与c3p0<a id="more"></a></p>
+<h1 id="DBCP"><a href="#DBCP" class="headerlink" title="DBCP"></a>DBCP</h1><p>使用 DBCP 数据库连接池， 加入 jar 包(2 个jar 包). 依赖于 Commons Pool。</p>
+<p>配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username=root</span><br><span class="line">password=123456</span><br><span class="line">driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">url=jdbc:mysql://localhost:3306/text</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<h2 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h2><blockquote><p>——-Server——-</p>
-</blockquote>
-<h1 id="单项通讯客户端："><a href="#单项通讯客户端：" class="headerlink" title="单项通讯客户端："></a>单项通讯客户端：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 客户端：</span></span><br><span class="line"><span class="comment"> * 1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line"><span class="comment"> * 2.操作：输入输出流</span></span><br><span class="line"><span class="comment"> * 3.释放资源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCP_Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"-------Client-------"</span>);</span><br><span class="line">		<span class="comment">//1.建立连接：使用Socket创建客户端：服务器地址和端口</span></span><br><span class="line">		Socket S=<span class="keyword">new</span> Socket(<span class="string">"localhost"</span>,<span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 3.操作：输入输出流</span></span><br><span class="line">		DataOutputStream out=<span class="keyword">new</span> DataOutputStream(S.getOutputStream());</span><br><span class="line">		String st=<span class="string">"你好"</span>;</span><br><span class="line">		out.writeUTF(st);</span><br><span class="line">		out.flush();</span><br><span class="line">		<span class="comment">// 4.释放资源</span></span><br><span class="line">		out.close();</span><br><span class="line">		S.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 1. 加载 dbcp 的 properties 配置文件: 配置文件中的键需要来自 BasicDataSource</span></span><br><span class="line"><span class="comment">	 * 的属性.</span></span><br><span class="line"><span class="comment">	 * 2. 调用 BasicDataSourceFactory 的 createDataSource 方法创建 DataSource</span></span><br><span class="line"><span class="comment">	 * 实例</span></span><br><span class="line"><span class="comment">	 * 3. 从 DataSource 实例中获取数据库连接. </span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testDBCPWithDataSourceFactory</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		</span><br><span class="line">		Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">		InputStream inStream = JDBCTest.class.getClassLoader()</span><br><span class="line">				.getResourceAsStream(<span class="string">"dbcp.properties"</span>);</span><br><span class="line">		properties.load(inStream);</span><br><span class="line">		</span><br><span class="line">		DataSource dataSource = </span><br><span class="line">				BasicDataSourceFactory.createDataSource(properties);</span><br><span class="line">		System.out.println(dataSource.getConnection()); </span><br><span class="line">		<span class="comment">//需要在配置文件添加相关属性</span></span><br><span class="line"><span class="comment">//		BasicDataSource basicDataSource = </span></span><br><span class="line"><span class="comment">//				(BasicDataSource) dataSource;</span></span><br><span class="line"><span class="comment">//		System.out.println(basicDataSource.getMaxWait()); </span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h2><blockquote><p>——-Server——-<br>客户端连接已建立<br>你好</p>
-</blockquote>
+<h1 id="C3P0"><a href="#C3P0" class="headerlink" title="C3P0"></a>C3P0</h1><p>C3P0推荐是用xml配置文件，格式为c3p0-config.xml。</p>
+<p>配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">c3p0-config</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">named-config</span> <span class="attr">name</span>=<span class="string">"helloc3p0"</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">&lt;!-- 指定连接数据源的基本属性 --&gt;</span></span><br><span class="line">	      <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span>&gt;</span>jdbc:mysql://localhost:3306/text<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!-- 若数据库中连接数不足时, 一次向数据库服务器申请多少个连接 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"acquireIncrement"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 初始化数据库连接池时连接的数量 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"initialPoolSize"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 数据库连接池中的最小的数据库连接数 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minPoolSize"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 数据库连接池中的最大的数据库连接数 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxPoolSize"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!-- C3P0 数据库连接池可以维护的 Statement 的个数 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxStatements"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 每个连接同时可以使用的 Statement 对象的个数 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxStatementsPerConnection"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;/<span class="name">named-config</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;/<span class="name">c3p0-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testC3poWithConfigFile</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		DataSource dataSource = </span><br><span class="line">				<span class="keyword">new</span> ComboPooledDataSource(<span class="string">"helloc3p0"</span>);  		</span><br><span class="line">		System.out.println(dataSource.getConnection()); </span><br><span class="line">		ComboPooledDataSource comboPooledDataSource = </span><br><span class="line">				(ComboPooledDataSource) dataSource;</span><br><span class="line">		<span class="comment">//System.out.println(comboPooledDataSource.getMaxStatements()); </span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -555,7 +539,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/网络编程/" rel="tag"># 网络编程</a>
+            <a href="/tags/数据库处理/" rel="tag"># 数据库处理</a>
           
         </div>
       
@@ -568,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/14/UDP通讯实现/" rel="next" title="UDP通讯实现">
-                <i class="fa fa-chevron-left"></i> UDP通讯实现
+              <a href="/2020/02/28/JDBC批量处理/" rel="next" title="JDBC批量处理">
+                <i class="fa fa-chevron-left"></i> JDBC批量处理
               </a>
             
           </div>
@@ -577,10 +561,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/15/TCP双向通讯/" rel="prev" title="TCP双向通讯">
-                TCP双向通讯 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP单向通讯"><span class="nav-number">1.</span> <span class="nav-text">TCP单向通讯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求-响应模式："><span class="nav-number">2.</span> <span class="nav-text">请求-响应模式：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP通信连接的简单过程："><span class="nav-number">3.</span> <span class="nav-text">TCP/IP通信连接的简单过程：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Socket的编程顺序："><span class="nav-number">4.</span> <span class="nav-text">通过Socket的编程顺序：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单项通讯服务器："><span class="nav-number">5.</span> <span class="nav-text">单项通讯服务器：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结果："><span class="nav-number">5.1.</span> <span class="nav-text">结果：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单项通讯客户端："><span class="nav-number">6.</span> <span class="nav-text">单项通讯客户端：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结果：-1"><span class="nav-number">6.1.</span> <span class="nav-text">结果：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DBCP"><span class="nav-number">1.</span> <span class="nav-text">DBCP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C3P0"><span class="nav-number">2.</span> <span class="nav-text">C3P0</span></a></li></ol></div>
             
 
           </div>
