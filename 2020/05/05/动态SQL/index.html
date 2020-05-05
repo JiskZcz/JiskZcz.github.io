@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="多态  多态指的是同一个方法调用，由于对象不同可能会有不同的行为。现实生活中，同一个方法，具体实现会完全不同。 比如：同样是调用人的“休息”方法，张三是睡觉，李四是旅游，数学教授是做数学题; 同样是调用人“吃饭”的方法，中国人用筷子吃饭，英国人用刀叉吃饭，印度人用手吃饭。">
-<meta name="keywords" content="Java">
+  <meta name="description" content="动态拼写SQL是MyBatis中很重要的一个内容。">
+<meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多态(Polymorphism)">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/多态-Polymorphism/index.html">
+<meta property="og:title" content="动态SQL">
+<meta property="og:url" content="http://yoursite.com/2020/05/05/动态SQL/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="多态  多态指的是同一个方法调用，由于对象不同可能会有不同的行为。现实生活中，同一个方法，具体实现会完全不同。 比如：同样是调用人的“休息”方法，张三是睡觉，李四是旅游，数学教授是做数学题; 同样是调用人“吃饭”的方法，中国人用筷子吃饭，英国人用刀叉吃饭，印度人用手吃饭。">
+<meta property="og:description" content="动态拼写SQL是MyBatis中很重要的一个内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-01T04:30:38.933Z">
+<meta property="og:updated_time" content="2020-05-05T06:40:07.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多态(Polymorphism)">
-<meta name="twitter:description" content="多态  多态指的是同一个方法调用，由于对象不同可能会有不同的行为。现实生活中，同一个方法，具体实现会完全不同。 比如：同样是调用人的“休息”方法，张三是睡觉，李四是旅游，数学教授是做数学题; 同样是调用人“吃饭”的方法，中国人用筷子吃饭，英国人用刀叉吃饭，印度人用手吃饭。">
+<meta name="twitter:title" content="动态SQL">
+<meta name="twitter:description" content="动态拼写SQL是MyBatis中很重要的一个内容。">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/17/多态-Polymorphism/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/05/动态SQL/">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>多态(Polymorphism) | Hello</title>
+  <title>动态SQL | Hello</title>
   
 
 
@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/多态-Polymorphism/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/动态SQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JiskZcz">
@@ -397,7 +397,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多态(Polymorphism)
+          <h1 class="post-title" itemprop="name headline">动态SQL
 
               
             
@@ -423,23 +423,13 @@
                 
               
 
-              <time title="创建时间：2019-07-17 21:21:00" itemprop="dateCreated datePublished" datetime="2019-07-17T21:21:00+08:00">2019-07-17</time>
+              <time title="创建时间：2020-05-05 14:02:37 / 修改时间：14:40:07" itemprop="dateCreated datePublished" datetime="2020-05-05T14:02:37+08:00">2020-05-05</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-03-01 12:30:38" itemprop="dateModified" datetime="2020-03-01T12:30:38+08:00">2020-03-01</time>
-              </span>
             
           
 
@@ -452,7 +442,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MyBatis/" itemprop="url" rel="index"><span itemprop="name">MyBatis</span></a></span>
 
                 
                 
@@ -500,13 +490,51 @@
       
 
       
-        <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>  多态指的是同一个方法调用，由于对象不同可能会有不同的行为。现实生活中，同一个方法，具体实现会完全不同。 比如：同样是调用人的“休息”方法，张三是睡觉，李四是旅游，数学教授是做数学题; 同样是调用人“吃饭”的方法，中国人用筷子吃饭，英国人用刀叉吃饭，印度人用手吃饭。<a id="more"></a></p>
-<h1 id="多态的要点："><a href="#多态的要点：" class="headerlink" title="多态的要点："></a>多态的要点：</h1><p> 1.多态是方法的多态，不是属性的多态(多态与属性无关)。</p>
-<p> 2.多态的存在要有3个必要条件：继承，方法重写，父类引用指向子类对象。</p>
-<p> 3.父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态就出现了。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">asd</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        AnimalCry(<span class="keyword">new</span> Dog());</span><br><span class="line">        AnimalCry(<span class="keyword">new</span> Cat());</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">AnimalCry</span><span class="params">(Animal a)</span> </span>&#123;</span><br><span class="line">        a.shout();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"叫了一声...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> 	<span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"汪汪汪.."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">seeDoor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"看门中...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"喵喵喵...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>动态拼写SQL是MyBatis中很重要的一个内容。<a id="more"></a></p>
+<style>
+    p{margin:0px 0} 
+</style>
+<h1 id="动态SQL基本标签"><a href="#动态SQL基本标签" class="headerlink" title="动态SQL基本标签"></a>动态SQL基本标签</h1><p>在MyBatis中提供了一些标签，能够便于程序员动态拼写SQL语句。<br>MyBatis的标签:</p>
+<p>&nbsp&nbsp&nbsp if:判断</p>
+<p>&nbsp&nbsp&nbsp choose (when, otherwise):分支选择；带了break的swtich-case
+    如果带了id就用id查，如果带了name就用name查;只会进入其中一个</p>
+<p>&nbsp&nbsp&nbsp trim 字符串截取(where(封装查询条件), set(封装修改条件))</p>
+<p>&nbsp&nbsp&nbsp foreach 遍历集合</p>
 
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>  多态的主要优势是提高了代码的可扩展性，符合开闭原则。但是多态也有弊端，就是无法调用子类特有的功能，比如，我不能使用父类的引用变量调用Dog类特有的seeDoor()方法。</p>
+<h1 id="if标签"><a href="#if标签" class="headerlink" title="if标签"></a>if标签</h1><p>if标签顾名思义就是用来判断的标签，能够动态的判断程序传过来的值符不符合条件来进行动态拼接SQL。<br>这里还引用了where标签，where标签就相当于SQL语句中的where,update更新语句下也可以使用set标签。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- public List&lt;Student&gt; getStudentDynamicIF(Student student); 接口方法--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudentDynamicIF"</span> <span class="attr">resultType</span>=<span class="string">"entity.Student"</span>&gt;</span></span><br><span class="line">	 select * from user <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"id!=null"</span>&gt;</span>id=#&#123;id&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 双引号这用单引号 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"name!=null and name!=''"</span>&gt;</span>and name like #&#123;name&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"userclass!=null"</span>&gt;</span>and userclass=#&#123;userclass&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;/<span class="name">where</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="choose标签"><a href="#choose标签" class="headerlink" title="choose标签"></a>choose标签</h1><p>具有内部标签(when, otherwise):是一个分支选择；相当于带了break的swtich-case</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- public List&lt;Student&gt; getStudentDynamicChoose(Student student); 接口方法--&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudentDynamicChoose"</span> <span class="attr">resultType</span>=<span class="string">"entity.Student"</span>&gt;</span></span><br><span class="line"> 		select * from user</span><br><span class="line"> 		<span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line"> 			<span class="comment">&lt;!-- 如果带了id就用id查，如果带了name就用name查;只会进入其中一个 --&gt;</span></span><br><span class="line"> 			<span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line"> 				<span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"id!=null"</span>&gt;</span>id=#&#123;id&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line"> 				<span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"name!=null and name!=''"</span>&gt;</span>name like #&#123;name&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line"> 				<span class="comment">&lt;!-- 其它条件均不符合的时候 --&gt;</span></span><br><span class="line"> 				<span class="tag">&lt;<span class="name">otherwise</span>&gt;</span>userclass=2<span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span></span><br><span class="line"> 			<span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="trim标签"><a href="#trim标签" class="headerlink" title="trim标签"></a>trim标签</h1><p>字符串截取，常用于SQL语句的一些连接符和结束标志。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- public List&lt;Student&gt; getStudentDynamicTrim(Student student); --&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudentDynamicTrim"</span> <span class="attr">resultType</span>=<span class="string">"entity.Student"</span>&gt;</span></span><br><span class="line"> 		 select * from user </span><br><span class="line"> 		 <span class="comment">&lt;!-- 后面多出的and或者or where标签不能解决 </span></span><br><span class="line"><span class="comment">	 	prefix="":前缀：trim标签体中是整个字符串拼串 后的结果。</span></span><br><span class="line"><span class="comment">	 			prefix给拼串后的整个字符串加一个前缀 </span></span><br><span class="line"><span class="comment">	 	prefixOverrides="":</span></span><br><span class="line"><span class="comment">	 			前缀覆盖： 去掉整个字符串前面多余的字符</span></span><br><span class="line"><span class="comment">	 	suffix="":后缀</span></span><br><span class="line"><span class="comment">	 			suffix给拼串后的整个字符串加一个后缀 </span></span><br><span class="line"><span class="comment">	 	suffixOverrides=""</span></span><br><span class="line"><span class="comment">	 			后缀覆盖：去掉整个字符串后面多余的字符		</span></span><br><span class="line"><span class="comment">	 	--&gt;</span></span><br><span class="line">	 	<span class="comment">&lt;!-- 自定义字符串的截取规则 --&gt;</span></span><br><span class="line"> 		 <span class="tag">&lt;<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"where"</span> <span class="attr">suffixOverrides</span>=<span class="string">"and"</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"id!=null"</span>&gt;</span>id=#&#123;id&#125; and<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 双引号这用单引号 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"name!=null and name!=''"</span>&gt;</span>  name like #&#123;name&#125; and<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"userclass!=null"</span>&gt;</span> userclass=#&#123;userclass&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;/<span class="name">trim</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="foreach标签"><a href="#foreach标签" class="headerlink" title="foreach标签"></a>foreach标签</h1><p>用于遍历集合的标签，可以做很多事情，例如批量查询，批量更新，批量删除。<br>批量查询</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- public List&lt;Student&gt; getStudentDynamicforeach(List&lt;Integer&gt; list); 接口方法--&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudentDynamicforeach"</span> <span class="attr">resultType</span>=<span class="string">"entity.Student"</span>&gt;</span></span><br><span class="line"> 		select * from user </span><br><span class="line"> 		<span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	 		collection：指定要遍历的集合：</span></span><br><span class="line"><span class="comment">	 			list类型的参数会特殊处理封装在map中，map的key就叫list</span></span><br><span class="line"><span class="comment">	 		item：将当前遍历出的元素赋值给指定的变量</span></span><br><span class="line"><span class="comment">	 		separator:每个元素之间的分隔符</span></span><br><span class="line"><span class="comment">	 		open：遍历出所有结果拼接一个开始的字符</span></span><br><span class="line"><span class="comment">	 		close:遍历出所有结果拼接一个结束的字符</span></span><br><span class="line"><span class="comment">	 		index:索引。遍历list的时候是index就是索引，item就是当前值</span></span><br><span class="line"><span class="comment">	 				      遍历map的时候index表示的就是map的key，item就是map的值</span></span><br><span class="line"><span class="comment">	 		</span></span><br><span class="line"><span class="comment">	 		#&#123;变量名&#125;就能取出变量的值也就是当前遍历出的元素</span></span><br><span class="line"><span class="comment">	 	  --&gt;</span></span><br><span class="line">	 	  <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">item</span>=<span class="string">"list_id"</span> <span class="attr">separator</span>=<span class="string">","</span></span></span><br><span class="line"><span class="tag">	 	  	<span class="attr">open</span>=<span class="string">"where id in("</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">	 	  	#&#123;list_id&#125;</span><br><span class="line">	 	  <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>批量保存</p>
+<pre><code class="Xml"><span class="comment">&lt;!-- 批量保存 --&gt;</span>
+     <span class="comment">&lt;!--public void addStudent(@Param("stu")List&lt;Student&gt; stu);  --&gt;</span>
+     <span class="comment">&lt;!--MySQL下批量保存：可以foreach遍历   mysql支持values(),(),()语法--&gt;</span>
+    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span>
+         insert into user(name,sex,userclass) 
+        values
+        <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span>
+            (#{stus.name},#{stus.sex},#{stus.userclass})
+        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span>
+     <span class="tag">&lt;/<span class="name">insert</span>&gt;</span><span class="comment">&lt;!--   --&gt;</span>
+
+     <span class="comment">&lt;!-- 这种方式需要数据库连接属性allowMultiQueries=true；</span>
+<span class="comment">         这种分号分隔多个sql可以用于其他的批量操作（删除，修改） --&gt;</span>
+     <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span>
+         <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">";"</span>&gt;</span>
+             insert into user(name,sex,userclass)
+             values(#{stus.name},#{stus.sex},#{stus.userclass})
+         <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span>
+     <span class="tag">&lt;/<span class="name">insert</span>&gt;</span> 
+
+</code></pre>
 
       
     </div>
@@ -570,7 +598,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
           
         </div>
       
@@ -583,8 +611,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/16/Java垃圾回收机制-Garbage-Collection/" rel="next" title="Java垃圾回收机制(Garbage Collection)">
-                <i class="fa fa-chevron-left"></i> Java垃圾回收机制(Garbage Collection)
+              <a href="/2020/05/03/ResultMap-学习/" rel="next" title="resultMap-学习">
+                <i class="fa fa-chevron-left"></i> resultMap-学习
               </a>
             
           </div>
@@ -592,10 +620,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/19/抽象方法和抽象类/" rel="prev" title="抽象方法和抽象类">
-                抽象方法和抽象类 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -805,7 +829,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">1.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态的要点："><span class="nav-number">2.</span> <span class="nav-text">多态的要点：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态SQL基本标签"><span class="nav-number">1.</span> <span class="nav-text">动态SQL基本标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if标签"><span class="nav-number">2.</span> <span class="nav-text">if标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#choose标签"><span class="nav-number">3.</span> <span class="nav-text">choose标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trim标签"><span class="nav-number">4.</span> <span class="nav-text">trim标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#foreach标签"><span class="nav-number">5.</span> <span class="nav-text">foreach标签</span></a></li></ol></div>
             
 
           </div>
