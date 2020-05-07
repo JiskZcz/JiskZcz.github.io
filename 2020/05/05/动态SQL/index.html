@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello">
 <meta property="og:description" content="动态拼写SQL是MyBatis中很重要的一个内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-05T06:40:07.822Z">
+<meta property="og:updated_time" content="2020-05-06T02:15:35.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态SQL">
 <meta name="twitter:description" content="动态拼写SQL是MyBatis中很重要的一个内容。">
@@ -423,13 +423,23 @@
                 
               
 
-              <time title="创建时间：2020-05-05 14:02:37 / 修改时间：14:40:07" itemprop="dateCreated datePublished" datetime="2020-05-05T14:02:37+08:00">2020-05-05</time>
+              <time title="创建时间：2020-05-05 14:02:37" itemprop="dateCreated datePublished" datetime="2020-05-05T14:02:37+08:00">2020-05-05</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-05-06 10:15:35" itemprop="dateModified" datetime="2020-05-06T10:15:35+08:00">2020-05-06</time>
+              </span>
             
           
 
@@ -514,27 +524,8 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- public List&lt;Student&gt; getStudentDynamicforeach(List&lt;Integer&gt; list); 接口方法--&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudentDynamicforeach"</span> <span class="attr">resultType</span>=<span class="string">"entity.Student"</span>&gt;</span></span><br><span class="line"> 		select * from user </span><br><span class="line"> 		<span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	 		collection：指定要遍历的集合：</span></span><br><span class="line"><span class="comment">	 			list类型的参数会特殊处理封装在map中，map的key就叫list</span></span><br><span class="line"><span class="comment">	 		item：将当前遍历出的元素赋值给指定的变量</span></span><br><span class="line"><span class="comment">	 		separator:每个元素之间的分隔符</span></span><br><span class="line"><span class="comment">	 		open：遍历出所有结果拼接一个开始的字符</span></span><br><span class="line"><span class="comment">	 		close:遍历出所有结果拼接一个结束的字符</span></span><br><span class="line"><span class="comment">	 		index:索引。遍历list的时候是index就是索引，item就是当前值</span></span><br><span class="line"><span class="comment">	 				      遍历map的时候index表示的就是map的key，item就是map的值</span></span><br><span class="line"><span class="comment">	 		</span></span><br><span class="line"><span class="comment">	 		#&#123;变量名&#125;就能取出变量的值也就是当前遍历出的元素</span></span><br><span class="line"><span class="comment">	 	  --&gt;</span></span><br><span class="line">	 	  <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">item</span>=<span class="string">"list_id"</span> <span class="attr">separator</span>=<span class="string">","</span></span></span><br><span class="line"><span class="tag">	 	  	<span class="attr">open</span>=<span class="string">"where id in("</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">	 	  	#&#123;list_id&#125;</span><br><span class="line">	 	  <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>批量保存</p>
-<pre><code class="Xml"><span class="comment">&lt;!-- 批量保存 --&gt;</span>
-     <span class="comment">&lt;!--public void addStudent(@Param("stu")List&lt;Student&gt; stu);  --&gt;</span>
-     <span class="comment">&lt;!--MySQL下批量保存：可以foreach遍历   mysql支持values(),(),()语法--&gt;</span>
-    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span>
-         insert into user(name,sex,userclass) 
-        values
-        <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span>
-            (#{stus.name},#{stus.sex},#{stus.userclass})
-        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span>
-     <span class="tag">&lt;/<span class="name">insert</span>&gt;</span><span class="comment">&lt;!--   --&gt;</span>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 批量保存 --&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--public void addStudent(@Param("stu")List&lt;Student&gt; stu);  --&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--MySQL下批量保存：可以foreach遍历   mysql支持values(),(),()语法--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span></span><br><span class="line">	 	insert into user(name,sex,userclass) </span><br><span class="line">		values</span><br><span class="line">		<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span></span><br><span class="line">			(#&#123;stus.name&#125;,#&#123;stus.sex&#125;,#&#123;stus.userclass&#125;)</span><br><span class="line">		<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line">	 </span><br><span class="line">	 <span class="comment">&lt;!-- 这种方式需要数据库连接属性allowMultiQueries=true；</span></span><br><span class="line"><span class="comment">	 	这种分号分隔多个sql可以用于其他的批量操作（删除，修改） --&gt;</span></span><br><span class="line">	 <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">";"</span>&gt;</span></span><br><span class="line">	 		insert into user(name,sex,userclass)</span><br><span class="line">	 		values(#&#123;stus.name&#125;,#&#123;stus.sex&#125;,#&#123;stus.userclass&#125;)</span><br><span class="line">	 	<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">insert</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"># sql标签</span><br><span class="line">抽取可重用的sql片段。方便后面引用</span><br><span class="line">```Xml</span><br><span class="line"> <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	  	抽取可重用的sql片段。方便后面引用 </span></span><br><span class="line"><span class="comment">	  	1、sql抽取：经常将要查询的列名，或者插入用的列名抽取出来方便引用</span></span><br><span class="line"><span class="comment">	  	2、include来引用已经抽取的sql：</span></span><br><span class="line"><span class="comment">	  	3、include还可以自定义一些property，sql标签内部就能使用自定义的属性</span></span><br><span class="line"><span class="comment">	  			include-property：取值的正确方式$&#123;prop&#125;,</span></span><br><span class="line"><span class="comment">	  			#&#123;不能使用这种方式&#125;</span></span><br><span class="line"><span class="comment">	  --&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"insertColumn"</span>&gt;</span></span><br><span class="line">	  		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='oracle'"</span>&gt;</span></span><br><span class="line">	  			name,sex,user_class</span><br><span class="line">	  		<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">	  		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='mysql'"</span>&gt;</span></span><br><span class="line">	  			name,sex,userclass</span><br><span class="line">	  		<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- 引用例子 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span></span><br><span class="line">	 	insert into user(</span><br><span class="line">		<span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"insertColum"</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testColomn"</span> <span class="attr">value</span>=<span class="string">"abc"</span>/&gt;</span> <span class="comment">&lt;!-- 可以定义值 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">		) </span><br><span class="line">		values</span><br><span class="line">		<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span></span><br><span class="line">			(#&#123;stus.name&#125;,#&#123;stus.sex&#125;,#&#123;stus.userclass&#125;)</span><br><span class="line">		<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-     <span class="comment">&lt;!-- 这种方式需要数据库连接属性allowMultiQueries=true；</span>
-<span class="comment">         这种分号分隔多个sql可以用于其他的批量操作（删除，修改） --&gt;</span>
-     <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addStudent"</span>&gt;</span>
-         <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"stu"</span> <span class="attr">item</span>=<span class="string">"stus"</span> <span class="attr">separator</span>=<span class="string">";"</span>&gt;</span>
-             insert into user(name,sex,userclass)
-             values(#{stus.name},#{stus.sex},#{stus.userclass})
-         <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span>
-     <span class="tag">&lt;/<span class="name">insert</span>&gt;</span> 
-
-</code></pre>
 
       
     </div>
@@ -621,6 +612,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/05/06/MyBatis内置参数/" rel="prev" title="MyBatis内置参数">
+                MyBatis内置参数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -690,7 +685,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-count">60</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
